@@ -1,57 +1,60 @@
 puts "Enter first number"
-first_number=gets.to_i
+fnum=gets.to_i
 
 puts "Enter second number"
-second_number=gets.to_i
+snum=gets.to_i
 
 puts "Add"
-puts first_number+second_number
+puts fnum+snum
 
 puts "Subtract"
-puts first_number-second_number
+puts fnum-snum
 
 puts"Product"
-puts first_number*second_number
+puts fnum*snum
 
 puts "Divided"
-puts first_number/second_number
+puts fnum/snum
 
-puts "Quient"
-puts first_number%second_number
+puts "Remainder"
+puts fnum%snum
 
-puts "Enter first number"
-first_number=gets.to_i
+puts "Enter first number" 
+fnum=gets.to_i
 
 puts "Enter second number"
-second_number=gets.to_i
+snum=gets.to_i
 
 puts "Enter operator"
 operator=gets.chomp
-
-if operator == "+"
-puts first_number+second_number
-
-elsif operator == "-"
-puts first_number-second_number
-
-elsif operator == "*"
-puts first_number*second_number
-
-elsif operator == "/"
-puts first_number/second_number
-
-elsif operator == "%"
-puts first_number%second_number
-
-else
-puts "???"
 end
 
-puts "Do you want to add or subtract, and or multiply,and or divided?"
-puts "Answer Y/N!"
+if operator == "+"
+puts fnum+snum
+
+elsif operator == "-"
+puts fnum-snum
+
+elsif operator == "*"
+puts fnum*snum
+
+elsif operator == "/"
+puts fnum/snum
+
+elsif operator == "%"
+puts fnum%snum
+
+else
+puts "Invalid operator"
+end
+
+puts "\nDo you want to add or subtract, and or multiply,and or divided?"
+puts "Answer Y/N!\n"
 answer=gets.chomp
 
-if answer == "y"
+answer == "y"
+loop do
+
 puts "Enter first number"
 first_number=gets.to_i
 
@@ -63,7 +66,15 @@ puts first_number-second_number
 puts first_number*second_number
 puts first_number/second_number
 puts first_number%second_number
-else
-puts "*_*"
+puts "\nDo you want again?"
+answer=gets.chomp
+break if(answer == "n")
+
+end
+
+f = File.open('output.txt','a') do |line|
+line.puts "\r" + fnum.to_s
+line.puts "\r" + snum.to_s
+line.puts "\r" + operator.to_s
 end
 
